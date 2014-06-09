@@ -1,3 +1,22 @@
+Symfony2 SymLogin User Login/Registration
+========================
+
+A simple and easy to use user login and registration web application that includes authentication and password encryption. This is intended for practice purposes.
+
+Includes:
+
+3 bundles
+- Adminbundle - storing the login and registration controllers and views
+- Corebundle - the user view page
+- Modelbundle - all the business logic (i.e., enitities, repository, form and data fixture)
+
+Also
+- Simple filler success login page when logging in or registering successfully
+- Remember me check box
+- Register link on Login page
+- Logout page on success filler page
+
+
 Symfony Standard Edition
 ========================
 
