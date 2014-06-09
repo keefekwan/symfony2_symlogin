@@ -1,0 +1,9 @@
+jfc_admin:
+    resource: "@JFCAdminBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+jfc_core:
+    resource: "@JFCCoreBundle/Controller/"
+    type:     annotation
+    prefix:   /

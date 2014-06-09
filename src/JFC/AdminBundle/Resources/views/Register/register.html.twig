@@ -1,0 +1,23 @@
+{# src/JFCAdminBundle/Resources/views/Register/register.html.twig #}
+{% extends "JFCCoreBundle::layout.html.twig" %}
+
+{% block body %}
+    <div class="container">
+        <form class="form-signin" action="{{ path('jfc_admin_register') }}" method="POST">
+            <h2 class="form-signin-heading">Please Register</h2>
+            {{ form_errors(form) }}
+
+            {{ form_row(form.username) }}
+            {{ form_row(form.email) }}
+            {{ form_row(form.plainPassword.first, {
+            'label': 'Password'
+            }) }}
+            {{ form_row(form.plainPassword.second, {
+            'label': 'Repeat Password'
+            }) }}
+
+            {{ form_rest(form) }}
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
+        </form>
+    </div>
+{% endblock %}

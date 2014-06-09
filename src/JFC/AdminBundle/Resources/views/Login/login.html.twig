@@ -1,0 +1,26 @@
+{# src/JFC/AdminBundle/Resources/views/Login/login.html.twig #}
+{% extends 'JFCCoreBundle::layout.html.twig' %}
+
+{% block body %}
+    <div class="container">
+        {% if error %}
+            <div class="form-error">{{ error.message }}</div>
+        {% endif %}
+
+        <form class="form-signin" role="form" action="{{ path('jfc_admin_login_check') }}" method="post">
+            <h2 class="form-signin-heading">Please Sign In</h2>
+
+            <input type="text" id="username" name="_username" class="form-control" value="{{ last_username }}" placeholder="Username" required autofocus >
+
+            <input type="password" id="password" name="_password" class="form-control" placeholder="Password" required>
+
+            <a href="{{ path('jfc_admin_register') }}">Register</a>
+
+            <label class="checkbox">
+                <input type="checkbox" name="_remember_me"> Remember me
+            </label>
+
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+        </form>
+    </div> <!-- /container -->
+{% endblock %}

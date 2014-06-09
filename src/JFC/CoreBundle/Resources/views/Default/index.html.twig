@@ -1,0 +1,23 @@
+{# src/JFCCoreBundle/Resources/views/index.html.twig #}
+{% extends "JFCCoreBundle::layout.html.twig" %}
+
+{% block title %}Success and Nothing Less{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h3>Welcome to the Filler Page</h3>
+        {% if app.session.flashBag.has('success') %}
+            <div class="alert-message success">
+                {% for msg in app.session.flashBag.get('success') %}
+                    {{ msg }}
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+            <a class="button" href="{{ path('jfc_admin_logout') }}">Click to logout: {{ app.user.username }}</a>
+        {% endif %}
+        <br>
+        <img src="http://hub-pages.com/wp-content/uploads/2014/05/success.jpg" alt="Success">
+    </div>
+{% endblock %}
